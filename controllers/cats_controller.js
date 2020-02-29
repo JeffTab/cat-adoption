@@ -38,9 +38,9 @@ const updateCat = (catObj, catID) => {
                 console.log(err);
                 return reject(err);
             } else if (catdata.affectedRows === 0) {
-                return resolve({ message: "Couldn't find a cat with that ID!" });
+                return resolve({ message: "Couldn't find a cat with that ID!", code: 404 });
             }
-            resolve({ message: "Cat updated successfully!" });
+            resolve({ message: "Cat updated successfully!", code: 200 });
         });
     });
 };
